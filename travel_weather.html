@@ -1,0 +1,52 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PyScript Hello Travel Weather</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <py-env>
+    - requests
+    </py-env>
+  </head>
+    <body>
+       <h1>Euro Croatia the weather!</h1>
+       <div id="weather"></div>
+       <py-script>
+import requests
+print("\t\t歡迎進入旅遊地點天氣預測!\n\n")
+print("本次要旅遊城市及地點是歐洲克羅埃西亞，輸入完後請按下按鈕! Let's Go!\n\n")
+city_name1 = 'Vienna'
+city_name2 = 'Zadar'
+city_name3 = 'Omis'
+city_name4 = 'Dubrovnik'
+city_name5 = 'Kotor'
+city_name6 = 'Mostar'
+city_name7 = 'Hvr'
+city_name8 = 'Split'
+city_name9 = 'Plitvica'
+
+def Gen_report(C):
+    print("旅遊城市 : " + C)
+    url = 'https://wttr.in/{}'.format(C)
+    print(url)
+    try:
+        data = requests.get(url)
+        T = data.text
+    except:
+        T = "Error Occurred"
+    print(T)
+
+Gen_report(city_name1)
+Gen_report(city_name2)
+Gen_report(city_name3)
+Gen_report(city_name4)
+Gen_report(city_name5)
+Gen_report(city_name6)
+Gen_report(city_name7)
+Gen_report(city_name8)
+Gen_report(city_name9)
+       </py-script>
+   </body>
+</html>
