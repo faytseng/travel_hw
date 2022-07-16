@@ -18,7 +18,6 @@ city_name7 = 'Hvr'
 city_name8 = 'Split'
 city_name9 = 'Plitvica'
 # 4. importing the requests module
-import ssl
 import requests
 # 5. We will create a function that will take the name of the city the user enters and prints the report for us. Look at the code of the function below.
 def Gen_report(C):
