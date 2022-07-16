@@ -12,12 +12,11 @@
   </head>
     <body>
        <h1>Euro Croatia the weather!</h1>
-       <div id="data"></div>
+       <div id="weather"></div>
        <py-script>
-#pip install requests
+import requests
 print("\t\t歡迎進入旅遊地點天氣預測!\n\n")
 print("本次要旅遊城市及地點是歐洲克羅埃西亞，輸入完後請按下按鈕! Let's Go!\n\n")
-
 city_name1 = 'Vienna'
 city_name2 = 'Zadar'
 city_name3 = 'Omis'
@@ -28,11 +27,10 @@ city_name7 = 'Hvr'
 city_name8 = 'Split'
 city_name9 = 'Plitvica'
 
-import requests
-
 def Gen_report(C):
     print("旅遊城市 : " + C)
     url = 'https://wttr.in/{}'.format(C)
+    print(url)
     try:
         data = requests.get(url)
         T = data.text
